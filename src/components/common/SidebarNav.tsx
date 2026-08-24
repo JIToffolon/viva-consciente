@@ -123,7 +123,7 @@ export function SidebarNav() {
         </div>
       </div>
 
-      {/* Sidebar Footer: Theme Toggle & WhatsApp CTA */}
+      {/* Sidebar Footer: Theme Toggle & Centered WhatsApp CTA */}
       <div className="space-y-4 pt-4 border-t border-brand-border dark:border-dark-border">
         <div className="flex items-center justify-between px-2">
           <span className="text-xs font-bold text-brand-text-muted dark:text-dark-text-muted font-outfit">
@@ -132,23 +132,24 @@ export function SidebarNav() {
           <ThemeToggle showLabel />
         </div>
 
-        <div className="bg-gradient-to-br from-brand-forest to-brand-emerald dark:from-[#051E18] dark:to-[#0A3D2F] rounded-3xl p-4.5 text-white shadow-md space-y-2.5 border border-emerald-800/30">
-          <div className="flex items-center gap-2 text-xs font-bold text-emerald-300 font-outfit">
-            <Sparkles className="w-4 h-4" />
-            <span>Canal Oficial WhatsApp</span>
+        <div className="bg-gradient-to-br from-brand-forest to-brand-emerald dark:from-[#051E18] dark:to-[#0A3D2F] rounded-3xl p-5 text-white shadow-md text-center space-y-2 border border-emerald-800/30">
+          <div className="text-xs font-bold text-emerald-300 font-outfit">
+            Canal Oficial WhatsApp
           </div>
-          <p className="text-xs text-slate-200 leading-relaxed">
+          <p className="text-xs text-slate-200 leading-relaxed max-w-[200px] mx-auto">
             Consultas clínicas y fichas técnicas directas.
           </p>
-          <a
-            href="https://wa.me/5491100000000?text=Hola%20Viva%20Consciente%2C%20contacto%20desde%20portal%20web"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 w-full py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold rounded-2xl transition-all shadow-sm font-outfit group"
-          >
-            <WhatsAppIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
-            <span>Abrir WhatsApp</span>
-          </a>
+          <div className="pt-1">
+            <a
+              href="https://wa.me/5491100000000?text=Hola%20Viva%20Consciente%2C%20contacto%20desde%20portal%20web"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 w-full py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold rounded-2xl transition-all shadow-sm font-outfit group"
+            >
+              <WhatsAppIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              <span>Abrir WhatsApp</span>
+            </a>
+          </div>
         </div>
       </div>
     </aside>
