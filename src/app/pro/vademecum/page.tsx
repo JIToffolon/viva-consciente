@@ -43,7 +43,7 @@ export default function VademecumPage() {
         return false;
       }
 
-      // Search query match (name, description, ingredients, areas)
+      // Search query match
       if (query) {
         const matchName = product.name.toLowerCase().includes(query);
         const matchDesc = product.functionalDescription.toLowerCase().includes(query);
@@ -67,27 +67,27 @@ export default function VademecumPage() {
   const generalProducts = filteredProducts.filter((p) => !p.isAnchorFeatured);
 
   return (
-    <div className="space-y-4 animate-in fade-in duration-300">
+    <div className="space-y-5 animate-in fade-in duration-300">
       {/* Header Bar */}
       <div className="flex items-center justify-between pt-1">
         <Link
           href="/pro"
-          className="inline-flex items-center gap-1.5 text-xs text-brand-text-muted hover:text-brand-teal font-medium transition-colors"
+          className="inline-flex items-center gap-1.5 text-xs text-brand-text-muted hover:text-brand-green font-semibold transition-colors font-outfit"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Volver al Hub PRO</span>
         </Link>
-        <span className="text-[11px] font-bold text-brand-teal bg-teal-50 px-2.5 py-0.5 rounded-full border border-teal-100">
+        <span className="text-[11px] font-bold text-brand-emerald bg-brand-sage px-3 py-1 rounded-full border border-brand-border font-outfit">
           {filteredProducts.length} Fórmulas
         </span>
       </div>
 
       {/* Title & Editorial Note */}
       <div>
-        <h1 className="text-xl font-bold text-brand-text-main">
+        <h1 className="text-2xl md:text-3xl font-extrabold text-brand-text-main font-outfit">
           Vademécum Profesional Digital
         </h1>
-        <p className="text-xs text-brand-text-muted mt-1 leading-relaxed">
+        <p className="text-xs md:text-sm text-brand-text-muted mt-1 leading-relaxed">
           Portfolio estructurado para consulta técnica rápida en menos de 5 minutos.
         </p>
       </div>
@@ -105,9 +105,9 @@ export default function VademecumPage() {
 
       {/* Results Section */}
       {filteredProducts.length === 0 ? (
-        <div className="bg-brand-surface p-8 rounded-2xl border border-slate-200 text-center space-y-2">
-          <BookOpen className="w-8 h-8 text-brand-text-muted mx-auto" />
-          <h2 className="text-sm font-bold text-brand-text-main">No se encontraron productos</h2>
+        <div className="bg-brand-surface p-8 rounded-3xl border border-brand-border text-center space-y-3 shadow-xs">
+          <BookOpen className="w-9 h-9 text-brand-text-muted mx-auto" />
+          <h2 className="text-sm font-bold text-brand-text-main font-outfit">No se encontraron productos</h2>
           <p className="text-xs text-brand-text-muted">
             Intente con otro término o limpie los filtros seleccionados.
           </p>
@@ -117,23 +117,23 @@ export default function VademecumPage() {
               setSelectedFamily("ALL");
               setSelectedArea("ALL");
             }}
-            className="mt-2 px-3 py-1.5 bg-brand-teal text-white text-xs font-semibold rounded-lg"
+            className="mt-2 px-4 py-2 bg-brand-emerald text-white text-xs font-bold rounded-xl font-outfit"
           >
             Restablecer filtros
           </button>
         </div>
       ) : (
-        <div className="space-y-6">
-          {/* Section 1: Anchor Products */}
+        <div className="space-y-8">
+          {/* Section 1: Anchor Products (Responsive 1-to-2 Column Grid) */}
           {anchorProducts.length > 0 && (
-            <div className="space-y-3">
+            <div className="space-y-3.5">
               <div className="flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-brand-teal" />
-                <h2 className="text-xs font-bold text-brand-text-main uppercase tracking-wider">
+                <Sparkles className="w-4 h-4 text-brand-green" />
+                <h2 className="text-xs font-bold text-brand-forest uppercase tracking-wider font-outfit">
                   Productos Ancla Destacados ({anchorProducts.length})
                 </h2>
               </div>
-              <div className="space-y-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {anchorProducts.map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))}
@@ -141,16 +141,16 @@ export default function VademecumPage() {
             </div>
           )}
 
-          {/* Section 2: General Catalog */}
+          {/* Section 2: General Catalog (Responsive 1-to-2 or 3 Column Grid) */}
           {generalProducts.length > 0 && (
-            <div className="space-y-3">
-              <div className="flex items-center gap-2 pt-2 border-t border-slate-200">
-                <BookOpen className="w-4 h-4 text-slate-500" />
-                <h2 className="text-xs font-bold text-brand-text-main uppercase tracking-wider">
+            <div className="space-y-3.5">
+              <div className="flex items-center gap-2 pt-4 border-t border-brand-border">
+                <BookOpen className="w-4 h-4 text-brand-green" />
+                <h2 className="text-xs font-bold text-brand-forest uppercase tracking-wider font-outfit">
                   Catálogo Complementario ({generalProducts.length})
                 </h2>
               </div>
-              <div className="grid grid-cols-1 gap-2.5">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
                 {generalProducts.map((product) => (
                   <ProductSummaryCard key={product.id} product={product} />
                 ))}

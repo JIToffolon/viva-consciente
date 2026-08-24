@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "@/styles/globals.css";
 import { Header } from "@/components/common/Header";
+import { SidebarNav } from "@/components/common/SidebarNav";
 import { BottomNav } from "@/components/common/BottomNav";
 import { FloatingWhatsApp } from "@/components/common/FloatingWhatsApp";
 
@@ -25,7 +26,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-  themeColor: "#0E7490",
+  themeColor: "#0F5B46",
 };
 
 export default function RootLayout({
@@ -35,11 +36,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className="min-h-screen bg-slate-100 text-brand-text-main antialiased selection:bg-brand-teal selection:text-white flex justify-center">
-        {/* Contenedor Mobile Centrado */}
-        <div className="w-full max-w-md min-h-screen bg-brand-cream border-x border-slate-200/80 shadow-2xl flex flex-col relative pb-20">
-          <Header />
-          <main className="flex-1 p-4">{children}</main>
+      <body className="min-h-screen bg-brand-cream text-brand-text-main antialiased selection:bg-brand-green selection:text-white flex">
+        {/* Sidebar Navigation for Tablet & Desktop */}
+        <SidebarNav />
+
+        {/* Main Content Area */}
+        <div className="flex-1 flex flex-col min-h-screen relative w-full overflow-x-hidden">
+          <div className="md:hidden">
+            <Header />
+          </div>
+          <main className="flex-1 w-full max-w-md md:max-w-3xl lg:max-w-5xl mx-auto p-4 sm:p-6 md:p-8 pb-24 md:pb-12">
+            {children}
+          </main>
           <FloatingWhatsApp />
           <BottomNav />
         </div>

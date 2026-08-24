@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronRight, Sparkles } from "lucide-react";
 import { ReactNode } from "react";
 
 interface HeroScreenLayoutProps {
@@ -29,20 +29,25 @@ export function HeroScreenLayout({
 
   return (
     <div className="space-y-6 animate-in fade-in duration-300">
-      {/* Hero Visual Block */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-900 via-teal-900 to-slate-900 p-6 text-white shadow-md">
-        <div className="absolute top-0 right-0 -mt-8 -mr-8 w-40 h-40 rounded-full bg-teal-500/10 blur-2xl pointer-events-none" />
-        <div className="relative z-10 flex flex-col gap-3">
+      {/* Hero Visual Block with Deep Botanical Green Theme */}
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand-forest via-brand-emerald to-[#0A3F32] p-6 md:p-8 text-white shadow-lg border border-emerald-800/40">
+        <div className="absolute top-0 right-0 -mt-10 -mr-10 w-48 h-48 rounded-full bg-emerald-400/15 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-1/3 -mb-12 w-40 h-40 rounded-full bg-brand-green/20 blur-2xl pointer-events-none" />
+
+        <div className="relative z-10 flex flex-col gap-3.5">
           <div className="flex items-center justify-between">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-xs font-semibold uppercase tracking-wider text-emerald-200">
-              {badge}
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/15 backdrop-blur-md border border-white/25 rounded-full text-xs font-bold uppercase tracking-wider text-emerald-200">
+              <Sparkles className="w-3 h-3 text-emerald-300" />
+              <span>{badge}</span>
             </span>
-            {heroIcon && <div className="text-white/80">{heroIcon}</div>}
+            {heroIcon && <div className="text-white/90">{heroIcon}</div>}
           </div>
-          <h1 className="text-2xl font-bold leading-tight tracking-tight text-white">
+
+          <h1 className="text-2xl md:text-3xl font-extrabold leading-tight tracking-tight text-white font-outfit">
             {title}
           </h1>
-          <p className="text-sm text-slate-200/90 leading-relaxed max-w-sm">
+
+          <p className="text-sm md:text-base text-emerald-50/90 leading-relaxed max-w-xl font-normal">
             {subtitle}
           </p>
         </div>
@@ -56,7 +61,7 @@ export function HeroScreenLayout({
               href={ctaHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 w-full min-h-[48px] px-6 py-3 bg-brand-teal text-white font-semibold text-sm rounded-xl shadow-sm hover:bg-teal-700 active:scale-[0.98] transition-all"
+              className="flex items-center justify-center gap-2 w-full md:w-auto min-h-[50px] px-7 py-3.5 bg-gradient-to-r from-brand-emerald to-brand-green hover:from-brand-green hover:to-emerald-600 text-white font-bold text-sm rounded-2xl shadow-md shadow-brand-emerald/25 active:scale-[0.99] transition-all"
             >
               <span>{ctaText}</span>
               <ArrowRight className="w-4 h-4" />
@@ -64,7 +69,7 @@ export function HeroScreenLayout({
           ) : (
             <Link
               href={ctaHref}
-              className="flex items-center justify-center gap-2 w-full min-h-[48px] px-6 py-3 bg-brand-teal text-white font-semibold text-sm rounded-xl shadow-sm hover:bg-teal-700 active:scale-[0.98] transition-all"
+              className="flex items-center justify-center gap-2 w-full md:w-auto min-h-[50px] px-7 py-3.5 bg-gradient-to-r from-brand-emerald to-brand-green hover:from-brand-green hover:to-emerald-600 text-white font-bold text-sm rounded-2xl shadow-md shadow-brand-emerald/25 active:scale-[0.99] transition-all"
             >
               <span>{ctaText}</span>
               <ArrowRight className="w-4 h-4" />
@@ -73,7 +78,7 @@ export function HeroScreenLayout({
         </div>
       )}
 
-      {/* Embedded Nodes or Content Slot */}
+      {/* Embedded Content Slot */}
       {children && <div className="space-y-4">{children}</div>}
 
       {/* Secondary CTA link if present */}
@@ -81,7 +86,7 @@ export function HeroScreenLayout({
         <div className="pt-2">
           <Link
             href={secondaryCtaHref}
-            className="flex items-center justify-center gap-1.5 text-xs text-brand-text-muted hover:text-brand-teal font-medium transition-colors"
+            className="flex items-center justify-center md:justify-start gap-1.5 text-xs text-brand-green hover:text-brand-forest font-semibold transition-colors"
           >
             <span>{secondaryCtaText}</span>
             <ChevronRight className="w-3.5 h-3.5" />
