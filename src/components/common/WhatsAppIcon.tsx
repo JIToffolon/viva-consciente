@@ -1,44 +1,32 @@
+import Image from "next/image";
+
 interface WhatsAppIconProps {
   className?: string;
   size?: number;
 }
 
-export function WhatsAppIcon({ className = "w-5 h-5", size }: WhatsAppIconProps) {
+export function WhatsAppIcon({ className = "w-5 h-5", size = 48 }: WhatsAppIconProps) {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 175.216 175.552"
+    <Image
+      src="/icons/icons8-whatsapp-96.png"
+      alt="WhatsApp"
       width={size}
       height={size}
-      className={className}
-      fill="currentColor"
-    >
-      <path
-        fill="#25D366"
-        d="M87.184 0C39.043 0 0 39.043 0 87.184c0 15.394 4.025 30.407 11.666 43.636L.263 175.552l45.828-12.02c12.72 6.936 27.027 10.596 41.093 10.596 48.141 0 87.184-39.043 87.184-87.184S135.325 0 87.184 0z"
-      />
-      <path
-        fill="#FAFAFA"
-        d="M135.658 124.085c-1.996 5.63-9.882 10.308-16.143 11.666-4.288.928-9.882 1.662-28.718-6.143-24.093-9.982-39.638-34.469-40.84-36.071-1.189-1.602-9.769-12.998-9.769-24.789 0-11.791 6.18-17.587 8.375-19.983 2.195-2.396 4.793-2.996 6.395-2.996 1.602 0 3.204.015 4.59.088 1.472.073 3.447-.557 5.395 4.127 2.01 4.793 6.877 16.787 7.477 17.989.6 1.202 1.002 2.604.2 4.19-.802 1.602-1.202 2.604-2.396 4.004-1.202 1.4-2.529 3.117-3.604 4.19-1.202 1.202-2.454 2.505-1.054 4.901 1.4 2.396 6.224 10.264 13.344 16.611 9.157 8.163 16.89 10.697 19.286 11.899 2.396 1.202 3.803 1.002 5.203-.6 1.4-1.602 5.99-6.994 7.592-9.39 1.602-2.396 3.204-1.996 5.395-1.189 2.195.802 13.978 6.589 16.374 7.791 2.396 1.202 3.994 1.791 4.594 2.793.6 1.002.6 5.795-1.396 11.425z"
-      />
-    </svg>
+      priority
+      className={`inline-block object-contain ${className}`}
+    />
   );
 }
 
-export function WhatsAppFlatIcon({ className = "w-5 h-5" }: WhatsAppIconProps) {
+export function WhatsAppSmallIcon({ className = "w-4 h-4", size = 24 }: WhatsAppIconProps) {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      className={className}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
-      <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
-    </svg>
+    <Image
+      src="/icons/icons8-whatsapp-48.png"
+      alt="WhatsApp"
+      width={size}
+      height={size}
+      priority
+      className={`inline-block object-contain ${className}`}
+    />
   );
 }
