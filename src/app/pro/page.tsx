@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Sparkles, ShieldCheck, FileText, ArrowRight, Download, MessageSquare, AlertCircle } from "lucide-react";
+import { Sparkles, ShieldCheck, FileText, ArrowRight, Download, AlertCircle } from "lucide-react";
+import { WhatsAppIcon } from "@/components/common/WhatsAppIcon";
 import productsData from "@/data/products.json";
 import { ProductMaster } from "@/types/product";
 import { ProductCard } from "@/components/vademecum/ProductCard";
@@ -11,7 +12,7 @@ export default function ProHubPage() {
   return (
     <div className="space-y-6 animate-in fade-in duration-300">
       {/* Hero PRO */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand-forest via-[#0A3D2F] to-[#041F19] p-6 md:p-8 text-white shadow-lg border border-emerald-800/40">
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand-forest via-[#0A3D2F] to-[#041F19] dark:from-[#031410] dark:via-[#082920] dark:to-[#041F18] p-6 md:p-8 text-white shadow-lg border border-emerald-800/40 dark:border-emerald-700/30">
         <div className="flex items-center justify-between mb-3">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-400/20 text-amber-300 border border-amber-400/30 font-outfit">
             <Sparkles className="w-3.5 h-3.5" />
@@ -34,20 +35,22 @@ export default function ProHubPage() {
             <FileText className="w-4 h-4" />
             <span>Explorar Vademécum Completo</span>
           </Link>
-          <Link
-            href="/app/contacto"
-            className="flex items-center justify-center gap-2 py-3 px-4 bg-white/10 hover:bg-white/20 text-white text-xs font-bold rounded-2xl transition-colors border border-white/15 font-outfit"
+          <a
+            href="https://wa.me/5491100000000?text=Hola%20Viva%20Consciente%2C%20deseo%20contactar%20al%20%C3%A1rea%20profesional"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 py-3 px-4 bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold rounded-2xl transition-all shadow-sm font-outfit"
           >
-            <MessageSquare className="w-4 h-4" />
-            <span>Contactar Asesoría Médica</span>
-          </Link>
+            <WhatsAppIcon className="w-4 h-4" />
+            <span>WhatsApp Médico PRO</span>
+          </a>
         </div>
       </div>
 
       {/* Disclaimer Editorial */}
-      <div className="bg-amber-50/90 border border-amber-300 p-4 rounded-2xl flex items-start gap-3 shadow-2xs">
-        <AlertCircle className="w-4.5 h-4.5 text-amber-800 shrink-0 mt-0.5" />
-        <div className="text-xs text-amber-950 leading-relaxed font-medium">
+      <div className="bg-amber-50/90 dark:bg-amber-950/40 border border-amber-300 dark:border-amber-800 p-4 rounded-2xl flex items-start gap-3 shadow-2xs">
+        <AlertCircle className="w-4.5 h-4.5 text-amber-800 dark:text-amber-300 shrink-0 mt-0.5" />
+        <div className="text-xs text-amber-950 dark:text-amber-200 leading-relaxed font-medium">
           <strong>Uso Exclusivo de Divulgación:</strong> La información contenida en esta sección está destinada exclusivamente a médicos, nutricionistas, naturópatas e investigadores de la salud.
         </div>
       </div>
@@ -56,16 +59,16 @@ export default function ProHubPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
         <Link
           href="/pro/vademecum"
-          className="p-5 bg-brand-surface rounded-3xl border border-brand-border shadow-2xs hover:border-brand-green/50 hover:shadow-md transition-all flex flex-col justify-between group"
+          className="p-5 bg-brand-surface dark:bg-dark-surface rounded-3xl border border-brand-border dark:border-dark-border shadow-2xs hover:border-brand-green/50 dark:hover:border-emerald-500/50 hover:shadow-md transition-all flex flex-col justify-between group"
         >
-          <div className="w-10 h-10 rounded-2xl bg-brand-sage text-brand-green flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
+          <div className="w-10 h-10 rounded-2xl bg-brand-sage dark:bg-dark-surface-tint text-brand-green dark:text-emerald-400 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
             <ShieldCheck className="w-5 h-5" />
           </div>
           <div>
-            <h2 className="text-xs font-bold text-brand-text-main font-outfit group-hover:text-brand-green transition-colors">
+            <h2 className="text-xs font-bold text-brand-text-main dark:text-dark-text-main font-outfit group-hover:text-brand-green transition-colors">
               Vademécum V2
             </h2>
-            <p className="text-[11px] text-brand-text-muted mt-0.5">Catálogo con filtros reactivos</p>
+            <p className="text-[11px] text-brand-text-muted dark:text-dark-text-muted mt-0.5">Catálogo con filtros reactivos</p>
           </div>
         </Link>
 
@@ -73,16 +76,16 @@ export default function ProHubPage() {
           href="https://wa.me/5491100000000?text=Hola%20Viva%20Consciente%2C%20deseo%20solicitar%20el%20dossier%20m%C3%A9dico%20en%20PDF"
           target="_blank"
           rel="noopener noreferrer"
-          className="p-5 bg-brand-surface rounded-3xl border border-brand-border shadow-2xs hover:border-amber-400 hover:shadow-md transition-all flex flex-col justify-between group"
+          className="p-5 bg-brand-surface dark:bg-dark-surface rounded-3xl border border-brand-border dark:border-dark-border shadow-2xs hover:border-amber-400 dark:hover:border-amber-500/60 hover:shadow-md transition-all flex flex-col justify-between group"
         >
-          <div className="w-10 h-10 rounded-2xl bg-amber-50 text-brand-gold flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
+          <div className="w-10 h-10 rounded-2xl bg-amber-50 dark:bg-amber-950/40 text-brand-gold dark:text-amber-400 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
             <Download className="w-5 h-5" />
           </div>
           <div>
-            <h2 className="text-xs font-bold text-brand-text-main font-outfit group-hover:text-brand-gold transition-colors">
+            <h2 className="text-xs font-bold text-brand-text-main dark:text-dark-text-main font-outfit group-hover:text-brand-gold transition-colors">
               Dossier Clínico
             </h2>
-            <p className="text-[11px] text-brand-text-muted mt-0.5">Solicitar vía WhatsApp PRO</p>
+            <p className="text-[11px] text-brand-text-muted dark:text-dark-text-muted mt-0.5">Solicitar vía WhatsApp PRO</p>
           </div>
         </a>
       </div>
@@ -90,12 +93,12 @@ export default function ProHubPage() {
       {/* Featured Anchor Products Grid */}
       <div className="space-y-4 pt-2">
         <div className="flex items-center justify-between">
-          <h2 className="text-xs font-bold text-brand-forest uppercase tracking-wider font-outfit">
+          <h2 className="text-xs font-bold text-brand-forest dark:text-emerald-200 uppercase tracking-wider font-outfit">
             Productos Ancla Destacados ({anchorProducts.length})
           </h2>
           <Link
             href="/pro/vademecum"
-            className="text-xs font-bold text-brand-green hover:underline flex items-center gap-1 font-outfit"
+            className="text-xs font-bold text-brand-green dark:text-emerald-400 hover:underline flex items-center gap-1 font-outfit"
           >
             <span>Ver todos</span>
             <ArrowRight className="w-3.5 h-3.5" />

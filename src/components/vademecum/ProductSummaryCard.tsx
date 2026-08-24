@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+import { WhatsAppIcon } from "@/components/common/WhatsAppIcon";
 import { ProductMaster } from "@/types/product";
 import { StatusBadge } from "./StatusBadge";
 
@@ -15,22 +15,22 @@ export function ProductSummaryCard({
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(requestMessage)}`;
 
   return (
-    <div className="flex flex-col justify-between rounded-2xl border border-brand-border bg-brand-surface p-4 shadow-2xs transition-all hover:border-brand-green/40 hover:shadow-sm">
+    <div className="flex flex-col justify-between rounded-2xl border border-brand-border dark:border-dark-border bg-brand-surface dark:bg-dark-surface p-4 shadow-2xs transition-all hover:border-brand-green/40 dark:hover:border-emerald-500/40 hover:shadow-sm">
       <div>
         <div className="flex items-start justify-between gap-2 mb-2">
-          <span className="text-[10px] font-bold text-brand-emerald uppercase tracking-wider font-outfit">
+          <span className="text-[10px] font-bold text-brand-emerald dark:text-emerald-300 uppercase tracking-wider font-outfit">
             {product.family.replace(/_/g, " ")}
           </span>
           <StatusBadge status={product.status} />
         </div>
 
-        <h4 className="text-sm font-bold text-brand-text-main font-outfit">{product.name}</h4>
+        <h4 className="text-sm font-bold text-brand-text-main dark:text-dark-text-main font-outfit">{product.name}</h4>
 
-        <div className="mt-0.5 text-[11px] font-semibold text-brand-green">
+        <div className="mt-0.5 text-[11px] font-semibold text-brand-green dark:text-emerald-400">
           Presentación: {product.presentation}
         </div>
 
-        <p className="mt-1.5 text-xs text-brand-text-muted leading-relaxed line-clamp-2">
+        <p className="mt-1.5 text-xs text-brand-text-muted dark:text-dark-text-muted leading-relaxed line-clamp-2">
           {product.functionalDescription}
         </p>
 
@@ -39,7 +39,7 @@ export function ProductSummaryCard({
             {product.functionalAreas.map((area, idx) => (
               <span
                 key={idx}
-                className="text-[9px] bg-brand-sage/60 text-brand-emerald px-1.5 py-0.5 rounded border border-brand-border font-medium"
+                className="text-[9px] bg-brand-sage/60 dark:bg-dark-surface-tint text-brand-emerald dark:text-emerald-300 px-1.5 py-0.5 rounded border border-brand-border dark:border-dark-border font-medium"
               >
                 {area}
               </span>
@@ -48,14 +48,14 @@ export function ProductSummaryCard({
         )}
       </div>
 
-      <div className="mt-3.5 pt-3 border-t border-brand-border">
+      <div className="mt-3.5 pt-3 border-t border-brand-border dark:border-dark-border">
         <a
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-1.5 w-full py-2 px-3 bg-brand-sage hover:bg-brand-emerald hover:text-white text-brand-emerald text-xs font-bold rounded-xl transition-all border border-brand-border font-outfit shadow-2xs"
+          className="flex items-center justify-center gap-2 w-full py-2 px-3 bg-brand-sage dark:bg-dark-surface-tint hover:bg-emerald-100 dark:hover:bg-emerald-900/40 text-brand-forest dark:text-emerald-200 text-xs font-bold rounded-xl transition-all border border-brand-border dark:border-dark-border font-outfit shadow-2xs group"
         >
-          <MessageCircle className="w-3.5 h-3.5" />
+          <WhatsAppIcon className="w-4 h-4 group-hover:scale-110 transition-transform" />
           <span>Solicitar Ficha Técnica</span>
         </a>
       </div>

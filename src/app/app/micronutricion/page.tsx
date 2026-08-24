@@ -13,38 +13,38 @@ export default function MicronutricionPage() {
       secondaryCtaHref="/app/investigacion"
       heroIcon={<Zap className="w-6 h-6 text-amber-300" />}
     >
-      <div className="space-y-3">
-        <div className="bg-brand-surface p-4 rounded-xl border border-slate-200 shadow-xs flex items-start gap-3">
-          <div className="w-8 h-8 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
-            <Activity className="w-4 h-4" />
+      <div className="space-y-3.5">
+        <div className="bg-brand-surface dark:bg-dark-surface p-5 rounded-2xl border border-brand-border dark:border-dark-border shadow-xs flex items-start gap-4 transition-colors">
+          <div className="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0">
+            <Activity className="w-5 h-5" />
           </div>
           <div>
-            <h2 className="text-xs font-bold text-brand-text-main">Cofactores Mitocondriales</h2>
-            <p className="text-xs text-brand-text-muted mt-1 leading-relaxed">
+            <h2 className="text-xs font-bold text-brand-text-main dark:text-dark-text-main font-outfit">Cofactores Mitocondriales</h2>
+            <p className="text-xs text-brand-text-muted dark:text-dark-text-muted mt-1 leading-relaxed">
               Moléculas orientadas al metabolismo energético eficiente, transporte de electrones y producción endógena de ATP.
             </p>
           </div>
         </div>
 
-        <div className="bg-brand-surface p-4 rounded-xl border border-slate-200 shadow-xs flex items-start gap-3">
-          <div className="w-8 h-8 rounded-lg bg-teal-50 text-brand-teal flex items-center justify-center shrink-0">
-            <Flame className="w-4 h-4" />
+        <div className="bg-brand-surface dark:bg-dark-surface p-5 rounded-2xl border border-brand-border dark:border-dark-border shadow-xs flex items-start gap-4 transition-colors">
+          <div className="w-10 h-10 rounded-xl bg-brand-sage dark:bg-dark-surface-tint text-brand-green dark:text-emerald-400 flex items-center justify-center shrink-0">
+            <Flame className="w-5 h-5" />
           </div>
           <div>
-            <h2 className="text-xs font-bold text-brand-text-main">Resiliencia Metabólica</h2>
-            <p className="text-xs text-brand-text-muted mt-1 leading-relaxed">
+            <h2 className="text-xs font-bold text-brand-text-main dark:text-dark-text-main font-outfit">Resiliencia Metabólica</h2>
+            <p className="text-xs text-brand-text-muted dark:text-dark-text-muted mt-1 leading-relaxed">
               Combinaciones sinérgicas que asisten la sensibilidad a la glucosa y la modulación de rutas inflamatorias.
             </p>
           </div>
         </div>
 
-        <div className="bg-brand-surface p-4 rounded-xl border border-slate-200 shadow-xs flex items-start gap-3">
-          <div className="w-8 h-8 rounded-lg bg-emerald-50 text-brand-green flex items-center justify-center shrink-0">
-            <ShieldPlus className="w-4 h-4" />
+        <div className="bg-brand-surface dark:bg-dark-surface p-5 rounded-2xl border border-brand-border dark:border-dark-border shadow-xs flex items-start gap-4 transition-colors">
+          <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-dark-surface-tint text-brand-emerald dark:text-emerald-400 flex items-center justify-center shrink-0">
+            <ShieldPlus className="w-5 h-5" />
           </div>
           <div>
-            <h2 className="text-xs font-bold text-brand-text-main">Biodisponibilidad Superior</h2>
-            <p className="text-xs text-brand-text-muted mt-1 leading-relaxed">
+            <h2 className="text-xs font-bold text-brand-text-main dark:text-dark-text-main font-outfit">Biodisponibilidad Superior</h2>
+            <p className="text-xs text-brand-text-muted dark:text-dark-text-muted mt-1 leading-relaxed">
               Formas queladas, lípidos de transporte MCT y fitosomas para maximizar la absorción y tolerancia gastrointestinal.
             </p>
           </div>

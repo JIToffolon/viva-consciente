@@ -1,6 +1,6 @@
 "use client";
 
-import { MessageCircle } from "lucide-react";
+import { WhatsAppIcon } from "./WhatsAppIcon";
 
 interface FloatingWhatsAppProps {
   phoneNumber?: string;
@@ -19,9 +19,9 @@ export function FloatingWhatsApp({
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Contactar por WhatsApp"
-      className="fixed bottom-20 right-4 z-40 flex items-center justify-center w-13 h-13 p-3.5 bg-[#25D366] text-white rounded-full shadow-[0_4px_14px_rgba(37,211,102,0.4)] hover:shadow-[0_6px_20px_rgba(37,211,102,0.6)] hover:scale-105 active:scale-95 transition-all duration-200"
+      className="fixed bottom-20 right-4 md:bottom-8 md:right-8 z-40 flex items-center justify-center w-14 h-14 p-2 bg-[#25D366] text-white rounded-full shadow-[0_6px_20px_rgba(37,211,102,0.45)] hover:shadow-[0_8px_25px_rgba(37,211,102,0.6)] hover:scale-110 active:scale-95 transition-all duration-200"
     >
-      <MessageCircle className="w-6 h-6 fill-white" />
+      <WhatsAppIcon className="w-10 h-10" />
     </a>
   );
 }

@@ -72,22 +72,22 @@ export default function VademecumPage() {
       <div className="flex items-center justify-between pt-1">
         <Link
           href="/pro"
-          className="inline-flex items-center gap-1.5 text-xs text-brand-text-muted hover:text-brand-green font-semibold transition-colors font-outfit"
+          className="inline-flex items-center gap-1.5 text-xs text-brand-text-muted dark:text-dark-text-muted hover:text-brand-green dark:hover:text-emerald-400 font-semibold transition-colors font-outfit"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Volver al Hub PRO</span>
         </Link>
-        <span className="text-[11px] font-bold text-brand-emerald bg-brand-sage px-3 py-1 rounded-full border border-brand-border font-outfit">
+        <span className="text-[11px] font-bold text-brand-emerald dark:text-emerald-300 bg-brand-sage dark:bg-dark-surface-tint px-3 py-1 rounded-full border border-brand-border dark:border-dark-border font-outfit">
           {filteredProducts.length} Fórmulas
         </span>
       </div>
 
       {/* Title & Editorial Note */}
       <div>
-        <h1 className="text-2xl md:text-3xl font-extrabold text-brand-text-main font-outfit">
+        <h1 className="text-2xl md:text-3xl font-extrabold text-brand-text-main dark:text-dark-text-main font-outfit">
           Vademécum Profesional Digital
         </h1>
-        <p className="text-xs md:text-sm text-brand-text-muted mt-1 leading-relaxed">
+        <p className="text-xs md:text-sm text-brand-text-muted dark:text-dark-text-muted mt-1 leading-relaxed">
           Portfolio estructurado para consulta técnica rápida en menos de 5 minutos.
         </p>
       </div>
@@ -105,10 +105,10 @@ export default function VademecumPage() {
 
       {/* Results Section */}
       {filteredProducts.length === 0 ? (
-        <div className="bg-brand-surface p-8 rounded-3xl border border-brand-border text-center space-y-3 shadow-xs">
-          <BookOpen className="w-9 h-9 text-brand-text-muted mx-auto" />
-          <h2 className="text-sm font-bold text-brand-text-main font-outfit">No se encontraron productos</h2>
-          <p className="text-xs text-brand-text-muted">
+        <div className="bg-brand-surface dark:bg-dark-surface p-8 rounded-3xl border border-brand-border dark:border-dark-border text-center space-y-3 shadow-xs transition-colors">
+          <BookOpen className="w-9 h-9 text-brand-text-muted dark:text-dark-text-muted mx-auto" />
+          <h2 className="text-sm font-bold text-brand-text-main dark:text-dark-text-main font-outfit">No se encontraron productos</h2>
+          <p className="text-xs text-brand-text-muted dark:text-dark-text-muted">
             Intente con otro término o limpie los filtros seleccionados.
           </p>
           <button
@@ -117,7 +117,7 @@ export default function VademecumPage() {
               setSelectedFamily("ALL");
               setSelectedArea("ALL");
             }}
-            className="mt-2 px-4 py-2 bg-brand-emerald text-white text-xs font-bold rounded-xl font-outfit"
+            className="mt-2 px-4 py-2 bg-brand-emerald dark:bg-brand-green text-white text-xs font-bold rounded-xl font-outfit shadow-sm"
           >
             Restablecer filtros
           </button>
@@ -128,8 +128,8 @@ export default function VademecumPage() {
           {anchorProducts.length > 0 && (
             <div className="space-y-3.5">
               <div className="flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-brand-green" />
-                <h2 className="text-xs font-bold text-brand-forest uppercase tracking-wider font-outfit">
+                <Sparkles className="w-4 h-4 text-brand-green dark:text-emerald-400" />
+                <h2 className="text-xs font-bold text-brand-forest dark:text-emerald-200 uppercase tracking-wider font-outfit">
                   Productos Ancla Destacados ({anchorProducts.length})
                 </h2>
               </div>
@@ -144,9 +144,9 @@ export default function VademecumPage() {
           {/* Section 2: General Catalog (Responsive 1-to-2 or 3 Column Grid) */}
           {generalProducts.length > 0 && (
             <div className="space-y-3.5">
-              <div className="flex items-center gap-2 pt-4 border-t border-brand-border">
-                <BookOpen className="w-4 h-4 text-brand-green" />
-                <h2 className="text-xs font-bold text-brand-forest uppercase tracking-wider font-outfit">
+              <div className="flex items-center gap-2 pt-4 border-t border-brand-border dark:border-dark-border">
+                <BookOpen className="w-4 h-4 text-brand-green dark:text-emerald-400" />
+                <h2 className="text-xs font-bold text-brand-forest dark:text-emerald-200 uppercase tracking-wider font-outfit">
                   Catálogo Complementario ({generalProducts.length})
                 </h2>
               </div>
