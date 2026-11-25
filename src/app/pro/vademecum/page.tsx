@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import { Sparkles, ArrowLeft, Filter, BookOpen, AlertCircle } from "lucide-react";
+import { ArrowLeft, BookOpen, FlaskConical } from "lucide-react";
 import productsData from "@/data/products.json";
 import { ProductMaster, ProductFamily } from "@/types/product";
 import { ProductCard } from "@/components/vademecum/ProductCard";
@@ -30,12 +30,10 @@ export default function VademecumPage() {
     const query = searchQuery.trim().toLowerCase();
 
     return allProducts.filter((product) => {
-      // Family match
       if (selectedFamily !== "ALL" && product.family !== selectedFamily) {
         return false;
       }
 
-      // Functional area match
       if (
         selectedArea !== "ALL" &&
         (!product.functionalAreas || !product.functionalAreas.includes(selectedArea))
@@ -43,7 +41,6 @@ export default function VademecumPage() {
         return false;
       }
 
-      // Search query match
       if (query) {
         const matchName = product.name.toLowerCase().includes(query);
         const matchDesc = product.functionalDescription.toLowerCase().includes(query);
@@ -67,27 +64,27 @@ export default function VademecumPage() {
   const generalProducts = filteredProducts.filter((p) => !p.isAnchorFeatured);
 
   return (
-    <div className="space-y-5 animate-in fade-in duration-300">
+    <div className="space-y-5">
       {/* Header Bar */}
       <div className="flex items-center justify-between pt-1">
         <Link
           href="/pro"
-          className="inline-flex items-center gap-1.5 text-xs text-brand-text-muted dark:text-dark-text-muted hover:text-brand-green dark:hover:text-emerald-400 font-semibold transition-colors font-outfit"
+          className="inline-flex items-center gap-1.5 text-sm text-brand-text-muted dark:text-dark-text-muted hover:text-brand-teal dark:hover:text-teal-400 font-semibold transition-colors font-outfit"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Volver al Hub PRO</span>
         </Link>
-        <span className="text-[11px] font-bold text-brand-emerald dark:text-emerald-300 bg-brand-sage dark:bg-dark-surface-tint px-3 py-1 rounded-full border border-brand-border dark:border-dark-border font-outfit">
+        <span className="text-xs font-semibold text-brand-teal dark:text-teal-300 bg-brand-sage dark:bg-dark-surface-tint px-3 py-1 rounded-md border border-brand-border dark:border-dark-border font-outfit">
           {filteredProducts.length} Fórmulas
         </span>
       </div>
 
       {/* Title & Editorial Note */}
       <div>
-        <h1 className="text-2xl md:text-3xl font-extrabold text-brand-text-main dark:text-dark-text-main font-outfit">
+        <h1 className="text-2xl md:text-3xl font-bold text-brand-text-main dark:text-dark-text-main font-outfit">
           Vademécum Profesional Digital
         </h1>
-        <p className="text-xs md:text-sm text-brand-text-muted dark:text-dark-text-muted mt-1 leading-relaxed">
+        <p className="text-sm md:text-base text-brand-text-muted dark:text-dark-text-muted mt-1 leading-relaxed">
           Portfolio estructurado para consulta técnica rápida en menos de 5 minutos.
         </p>
       </div>
@@ -105,10 +102,12 @@ export default function VademecumPage() {
 
       {/* Results Section */}
       {filteredProducts.length === 0 ? (
-        <div className="bg-brand-surface dark:bg-dark-surface p-8 rounded-3xl border border-brand-border dark:border-dark-border text-center space-y-3 shadow-xs transition-colors">
+        <div className="bg-brand-surface dark:bg-dark-surface p-8 rounded-xl border border-brand-border dark:border-dark-border text-center space-y-3 shadow-sm">
           <BookOpen className="w-9 h-9 text-brand-text-muted dark:text-dark-text-muted mx-auto" />
-          <h2 className="text-sm font-bold text-brand-text-main dark:text-dark-text-main font-outfit">No se encontraron productos</h2>
-          <p className="text-xs text-brand-text-muted dark:text-dark-text-muted">
+          <h2 className="text-base font-bold text-brand-text-main dark:text-dark-text-main font-outfit">
+            No se encontraron productos
+          </h2>
+          <p className="text-sm text-brand-text-muted dark:text-dark-text-muted">
             Intente con otro término o limpie los filtros seleccionados.
           </p>
           <button
@@ -117,19 +116,19 @@ export default function VademecumPage() {
               setSelectedFamily("ALL");
               setSelectedArea("ALL");
             }}
-            className="mt-2 px-4 py-2 bg-brand-emerald dark:bg-brand-green text-white text-xs font-bold rounded-xl font-outfit shadow-sm"
+            className="mt-2 px-4 py-2 bg-brand-teal text-white text-sm font-semibold rounded-lg font-outfit"
           >
             Restablecer filtros
           </button>
         </div>
       ) : (
         <div className="space-y-8">
-          {/* Section 1: Anchor Products (Responsive 1-to-2 Column Grid) */}
+          {/* Section 1: Anchor Products */}
           {anchorProducts.length > 0 && (
             <div className="space-y-3.5">
               <div className="flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-brand-green dark:text-emerald-400" />
-                <h2 className="text-xs font-bold text-brand-forest dark:text-emerald-200 uppercase tracking-wider font-outfit">
+                <FlaskConical className="w-4 h-4 text-brand-teal dark:text-teal-400" />
+                <h2 className="text-sm font-bold text-brand-text-main dark:text-dark-text-main uppercase tracking-wider font-outfit">
                   Productos Ancla Destacados ({anchorProducts.length})
                 </h2>
               </div>
@@ -141,16 +140,16 @@ export default function VademecumPage() {
             </div>
           )}
 
-          {/* Section 2: General Catalog (Responsive 1-to-2 or 3 Column Grid) */}
+          {/* Section 2: General Catalog */}
           {generalProducts.length > 0 && (
             <div className="space-y-3.5">
               <div className="flex items-center gap-2 pt-4 border-t border-brand-border dark:border-dark-border">
                 <BookOpen className="w-4 h-4 text-brand-green dark:text-emerald-400" />
-                <h2 className="text-xs font-bold text-brand-forest dark:text-emerald-200 uppercase tracking-wider font-outfit">
+                <h2 className="text-sm font-bold text-brand-text-main dark:text-dark-text-main uppercase tracking-wider font-outfit">
                   Catálogo Complementario ({generalProducts.length})
                 </h2>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {generalProducts.map((product) => (
                   <ProductSummaryCard key={product.id} product={product} />
                 ))}

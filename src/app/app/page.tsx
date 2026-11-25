@@ -1,6 +1,6 @@
 import Link from "next/link";
+import { ArrowRight, ShieldCheck, Microscope, HeartPulse, Leaf } from "lucide-react";
 import { HeroScreenLayout } from "@/components/common/HeroScreenLayout";
-import { Sparkles, ArrowRight, ShieldCheck, Microscope, HeartPulse, Leaf, BookOpen, Compass } from "lucide-react";
 
 export default function PortadaPage() {
   return (
@@ -14,82 +14,92 @@ export default function PortadaPage() {
       secondaryCtaHref="/pro"
       heroIcon={<Leaf className="w-6 h-6 text-emerald-300" />}
     >
-      {/* Quick Navigation Cards with Responsive 2-to-4 Columns */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5 pt-2">
+      {/* Quick Navigation Cards */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5 pt-1">
         <Link
           href="/app/investigacion"
-          className="p-4 bg-brand-surface dark:bg-dark-surface border border-brand-border dark:border-dark-border rounded-2xl hover:border-brand-green/50 dark:hover:border-emerald-500/50 hover:shadow-md transition-all flex flex-col justify-between shadow-2xs group"
+          className="p-4 bg-brand-surface dark:bg-dark-surface border border-brand-border dark:border-dark-border rounded-xl hover:border-brand-teal/60 dark:hover:border-teal-500/60 transition-colors flex flex-col justify-between shadow-sm group"
         >
-          <div className="w-9 h-9 rounded-xl bg-brand-sage dark:bg-dark-surface-tint text-brand-green dark:text-emerald-400 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+          <div className="w-9 h-9 rounded-lg bg-brand-sage dark:bg-dark-surface-tint text-brand-teal dark:text-teal-400 flex items-center justify-center mb-3">
             <Microscope className="w-4.5 h-4.5" />
           </div>
           <div>
-            <h2 className="text-xs font-bold text-brand-text-main dark:text-dark-text-main font-outfit group-hover:text-brand-green dark:group-hover:text-emerald-400 transition-colors">
+            <h2 className="text-sm font-bold text-brand-text-main dark:text-dark-text-main font-outfit group-hover:text-brand-teal dark:group-hover:text-teal-300 transition-colors">
               Investigación
             </h2>
-            <p className="text-[10px] text-brand-text-muted dark:text-dark-text-muted mt-0.5">Herbolaria & Ciencia</p>
+            <p className="text-xs text-brand-text-muted dark:text-dark-text-muted mt-0.5">
+              Herbolaria & Ciencia
+            </p>
           </div>
         </Link>
 
         <Link
           href="/app/superalimento"
-          className="p-4 bg-brand-surface dark:bg-dark-surface border border-brand-border dark:border-dark-border rounded-2xl hover:border-brand-green/50 dark:hover:border-emerald-500/50 hover:shadow-md transition-all flex flex-col justify-between shadow-2xs group"
+          className="p-4 bg-brand-surface dark:bg-dark-surface border border-brand-border dark:border-dark-border rounded-xl hover:border-brand-teal/60 dark:hover:border-teal-500/60 transition-colors flex flex-col justify-between shadow-sm group"
         >
-          <div className="w-9 h-9 rounded-xl bg-brand-sage dark:bg-dark-surface-tint text-brand-emerald dark:text-emerald-400 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+          <div className="w-9 h-9 rounded-lg bg-brand-sage dark:bg-dark-surface-tint text-brand-green dark:text-emerald-400 flex items-center justify-center mb-3">
             <HeartPulse className="w-4.5 h-4.5" />
           </div>
           <div>
-            <h2 className="text-xs font-bold text-brand-text-main dark:text-dark-text-main font-outfit group-hover:text-brand-green dark:group-hover:text-emerald-400 transition-colors">
+            <h2 className="text-sm font-bold text-brand-text-main dark:text-dark-text-main font-outfit group-hover:text-brand-teal dark:group-hover:text-teal-300 transition-colors">
               Superalimento®
             </h2>
-            <p className="text-[10px] text-brand-text-muted dark:text-dark-text-muted mt-0.5">Micronutrición Pura</p>
+            <p className="text-xs text-brand-text-muted dark:text-dark-text-muted mt-0.5">
+              Micronutrición Pura
+            </p>
           </div>
         </Link>
 
         <Link
           href="/app/adaptogenos"
-          className="p-4 bg-brand-surface dark:bg-dark-surface border border-brand-border dark:border-dark-border rounded-2xl hover:border-brand-green/50 dark:hover:border-emerald-500/50 hover:shadow-md transition-all flex flex-col justify-between shadow-2xs group"
+          className="p-4 bg-brand-surface dark:bg-dark-surface border border-brand-border dark:border-dark-border rounded-xl hover:border-brand-teal/60 dark:hover:border-teal-500/60 transition-colors flex flex-col justify-between shadow-sm group"
         >
-          <div className="w-9 h-9 rounded-xl bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-            <Sparkles className="w-4.5 h-4.5" />
+          <div className="w-9 h-9 rounded-lg bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 flex items-center justify-center mb-3">
+            <Leaf className="w-4.5 h-4.5" />
           </div>
           <div>
-            <h2 className="text-xs font-bold text-brand-text-main dark:text-dark-text-main font-outfit group-hover:text-brand-green dark:group-hover:text-emerald-400 transition-colors">
+            <h2 className="text-sm font-bold text-brand-text-main dark:text-dark-text-main font-outfit group-hover:text-brand-teal dark:group-hover:text-teal-300 transition-colors">
               Adaptógenos
             </h2>
-            <p className="text-[10px] text-brand-text-muted dark:text-dark-text-muted mt-0.5">Hongos & Botánica</p>
+            <p className="text-xs text-brand-text-muted dark:text-dark-text-muted mt-0.5">
+              Hongos & Botánica
+            </p>
           </div>
         </Link>
 
         <Link
           href="/pro/vademecum"
-          className="p-4 bg-gradient-to-br from-brand-sage to-emerald-100/60 dark:from-dark-surface-tint dark:to-emerald-950/60 border border-brand-green/30 dark:border-emerald-700/40 rounded-2xl hover:border-brand-green dark:hover:border-emerald-400 hover:shadow-md transition-all flex flex-col justify-between shadow-2xs group"
+          className="p-4 bg-brand-sage/70 dark:bg-dark-surface-tint border border-brand-border dark:border-dark-border border-l-4 border-l-brand-gold rounded-xl hover:border-brand-teal dark:hover:border-teal-400 transition-colors flex flex-col justify-between shadow-sm group"
         >
-          <div className="w-9 h-9 rounded-xl bg-brand-emerald dark:bg-brand-green text-white flex items-center justify-center mb-3 group-hover:scale-110 transition-transform shadow-xs">
+          <div className="w-9 h-9 rounded-lg bg-brand-forest dark:bg-brand-teal text-white flex items-center justify-center mb-3">
             <ShieldCheck className="w-4.5 h-4.5" />
           </div>
           <div>
-            <h2 className="text-xs font-bold text-brand-emerald dark:text-emerald-300 font-outfit">Vademécum PRO</h2>
-            <p className="text-[10px] text-brand-forest/80 dark:text-emerald-400/80 mt-0.5">Fórmulas V2</p>
+            <h2 className="text-sm font-bold text-brand-forest dark:text-emerald-200 font-outfit">
+              Vademécum PRO
+            </h2>
+            <p className="text-xs text-brand-text-muted dark:text-dark-text-muted mt-0.5">
+              Fórmulas V2
+            </p>
           </div>
         </Link>
       </div>
 
       {/* Institutional Highlights */}
-      <div className="bg-brand-surface dark:bg-dark-surface p-5 md:p-6 rounded-3xl border border-brand-border dark:border-dark-border shadow-xs space-y-3.5 transition-colors">
-        <div className="flex items-center gap-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-brand-green dark:bg-emerald-400 shadow-xs" />
-          <h2 className="text-xs font-bold text-brand-forest dark:text-emerald-200 uppercase tracking-wider font-outfit">
-            Pilares del Ecosistema
-          </h2>
-        </div>
-        <p className="text-xs md:text-sm text-brand-text-muted dark:text-dark-text-muted leading-relaxed">
+      <div className="bg-brand-surface dark:bg-dark-surface p-5 md:p-6 rounded-xl border border-brand-border dark:border-dark-border shadow-sm space-y-3">
+        <h2 className="text-xs font-bold text-brand-teal dark:text-teal-300 uppercase tracking-wider font-outfit">
+          Pilares del Ecosistema
+        </h2>
+        <p className="text-sm text-brand-text-muted dark:text-dark-text-muted leading-relaxed">
           Viva Consciente integra en un solo marco la investigación botánica de avanzada, la formulación clínica de micronutrición y la divulgación médica orientada al eje intestino-cerebro y la longevidad celular.
         </p>
-        <div className="pt-1 flex items-center justify-between text-xs text-brand-green dark:text-emerald-400 font-bold font-outfit">
-          <Link href="/app/viva-consciente" className="inline-flex items-center gap-1.5 hover:text-brand-forest dark:hover:text-white hover:underline">
+        <div className="pt-1">
+          <Link
+            href="/app/viva-consciente"
+            className="inline-flex items-center gap-1.5 text-sm text-brand-teal dark:text-teal-400 font-semibold font-outfit hover:underline"
+          >
             <span>Conocer la estructura de la organización</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+            <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </div>

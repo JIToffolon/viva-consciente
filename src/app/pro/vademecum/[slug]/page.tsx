@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Sparkles, Clock, Share2, ShieldCheck } from "lucide-react";
+import { ArrowLeft, FileText, ShieldCheck } from "lucide-react";
 import { WhatsAppIcon } from "@/components/common/WhatsAppIcon";
 import productsData from "@/data/products.json";
 import { ProductMaster } from "@/types/product";
@@ -48,40 +48,40 @@ export default function ProductDetailPage({ params }: Props) {
   const whatsappUrl = `https://wa.me/5491100000000?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
-    <div className="space-y-5 animate-in fade-in duration-300">
+    <div className="space-y-6">
       {/* Top Breadcrumb */}
-      <div className="flex items-center justify-between pt-1">
+      <div className="flex flex-wrap items-center justify-between gap-2 pt-1">
         <Link
           href="/pro/vademecum"
-          className="inline-flex items-center gap-1.5 text-xs text-brand-text-muted dark:text-dark-text-muted hover:text-brand-green dark:hover:text-emerald-400 font-semibold transition-colors font-outfit"
+          className="inline-flex items-center gap-1.5 text-sm text-brand-text-muted dark:text-dark-text-muted hover:text-brand-teal dark:hover:text-teal-400 font-semibold transition-colors font-outfit"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Volver al Vademécum</span>
         </Link>
-        <span className="text-[11px] text-brand-text-muted dark:text-dark-text-muted font-medium">
+        <span className="text-xs text-brand-text-muted dark:text-dark-text-muted font-medium">
           Actualizado: {product.updatedAt}
         </span>
       </div>
 
       {/* Main Header Card */}
-      <div className="bg-brand-surface dark:bg-dark-surface rounded-3xl border border-brand-border dark:border-dark-border p-6 md:p-8 shadow-sm space-y-4 transition-colors">
+      <div className="bg-brand-surface dark:bg-dark-surface rounded-xl border border-brand-border dark:border-dark-border p-6 md:p-7 shadow-sm space-y-4">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-brand-emerald dark:text-emerald-300 bg-brand-sage dark:bg-dark-surface-tint px-3 py-1 rounded-full border border-brand-border dark:border-dark-border font-outfit">
+            <span className="text-xs font-semibold uppercase tracking-wider text-brand-teal dark:text-teal-300 bg-brand-sage dark:bg-dark-surface-tint px-2.5 py-0.5 rounded-md border border-brand-border dark:border-dark-border font-outfit">
               {product.family.replace(/_/g, " ")}
             </span>
             <StatusBadge status={product.status} />
           </div>
-          <span className="text-xs font-semibold text-brand-forest dark:text-emerald-200 bg-brand-sage dark:bg-dark-surface-tint px-3 py-1 rounded-xl border border-brand-border dark:border-dark-border">
+          <span className="text-xs font-semibold text-brand-text-main dark:text-dark-text-main bg-brand-surface-tint dark:bg-dark-surface-tint px-3 py-1 rounded-md border border-brand-border dark:border-dark-border">
             {product.presentation}
           </span>
         </div>
 
-        <h1 className="text-2xl md:text-3xl font-extrabold text-brand-text-main dark:text-dark-text-main leading-tight font-outfit">
+        <h1 className="text-2xl md:text-3xl font-bold text-brand-text-main dark:text-dark-text-main leading-tight font-outfit">
           {product.name}
         </h1>
 
-        <p className="text-xs md:text-sm text-brand-text-muted dark:text-dark-text-muted leading-relaxed">
+        <p className="text-sm md:text-base text-brand-text-muted dark:text-dark-text-muted leading-relaxed">
           {product.functionalDescription}
         </p>
 
@@ -91,7 +91,7 @@ export default function ProductDetailPage({ params }: Props) {
             {product.functionalAreas.map((area, i) => (
               <span
                 key={i}
-                className="text-[10px] bg-brand-sage/70 dark:bg-dark-surface-tint text-brand-emerald dark:text-emerald-300 font-semibold px-2.5 py-1 rounded-lg border border-brand-border/60 dark:border-dark-border"
+                className="text-xs bg-brand-surface-tint dark:bg-dark-surface-tint text-brand-text-main dark:text-dark-text-main font-medium px-2.5 py-1 rounded-md border border-brand-border dark:border-dark-border"
               >
                 {area}
               </span>
@@ -102,22 +102,22 @@ export default function ProductDetailPage({ params }: Props) {
 
       {/* Accordion Sections (Composición, Uso, Precauciones Médicas) */}
       <div className="space-y-3">
-        <div className="flex items-center gap-2 px-1 text-xs font-bold text-brand-forest dark:text-emerald-200 uppercase tracking-wider font-outfit">
-          <Sparkles className="w-4 h-4 text-brand-green dark:text-emerald-400" />
+        <div className="flex items-center gap-2 px-1 text-xs font-bold text-brand-text-muted dark:text-dark-text-muted uppercase tracking-wider font-outfit">
+          <FileText className="w-4 h-4 text-brand-teal dark:text-teal-400" />
           <span>Información Técnica & Regulatoria</span>
         </div>
         <ProductAccordion product={product} />
       </div>
 
       {/* Direct Contact CTA for Professionals */}
-      <div className="bg-gradient-to-br from-brand-forest via-[#0A3D2F] to-[#041F19] dark:from-[#031410] dark:via-[#082920] dark:to-[#041F18] text-white rounded-3xl p-6 md:p-8 shadow-lg border border-emerald-800/40 dark:border-emerald-700/30 space-y-3">
+      <div className="bg-brand-forest dark:bg-[#051B16] text-white rounded-xl p-6 md:p-7 border border-emerald-900/50 dark:border-dark-border space-y-3">
         <div className="flex items-center gap-2">
-          <ShieldCheck className="w-5 h-5 text-emerald-400" />
-          <h2 className="text-xs font-bold text-white uppercase tracking-wider font-outfit">
+          <ShieldCheck className="w-5 h-5 text-emerald-300" />
+          <h2 className="text-sm font-bold text-white uppercase tracking-wider font-outfit">
             Consultas Profesionales & Dossier Clínico
           </h2>
         </div>
-        <p className="text-xs md:text-sm text-emerald-100/90 leading-relaxed max-w-xl">
+        <p className="text-sm text-emerald-50/90 leading-relaxed max-w-xl">
           ¿Desea solicitar el protocolo de dosificación clínica, estudios de estabilidad o resolver dudas técnicas sobre este producto?
         </p>
         <div className="pt-2">
@@ -125,9 +125,9 @@ export default function ProductDetailPage({ params }: Props) {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2.5 w-full md:w-auto min-h-[48px] py-3.5 px-6 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs rounded-2xl shadow-md transition-all font-outfit group"
+            className="inline-flex items-center justify-center gap-2.5 w-full sm:w-auto min-h-[48px] py-3 px-6 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold text-sm rounded-lg transition-colors font-outfit"
           >
-            <WhatsAppIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            <WhatsAppIcon className="w-5 h-5" />
             <span>{product.ctaProText || "Consultar ficha técnica vía WhatsApp"}</span>
           </a>
         </div>

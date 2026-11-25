@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,40 +6,33 @@
 
 @layer base {
   :root {
-    --font-outfit: 'Outfit', system-ui, sans-serif;
+    --font-inter: 'Inter', system-ui, sans-serif;
     --font-jakarta: 'Plus Jakarta Sans', system-ui, sans-serif;
-    --background: #f2f7f4;
-    --foreground: #0d221c;
+    --background: #f8faf9;
+    --foreground: #1e293b;
   }
 
   .dark {
-    --background: #061814;
-    --foreground: #e8f5f0;
+    --background: #081713;
+    --foreground: #e8f2ee;
   }
 
   html {
-    font-size: 15px;
-  }
-
-  @media (min-width: 768px) {
-    html {
-      font-size: 16.5px;
-    }
+    font-size: 16px;
   }
 
   body {
     background-color: var(--background);
     color: var(--foreground);
-    font-family: var(--font-jakarta);
+    font-family: var(--font-inter);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-tap-highlight-color: transparent;
-    transition: background-color 0.25s ease, color 0.25s ease;
     line-height: 1.6;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-outfit);
+    font-family: var(--font-jakarta);
     letter-spacing: -0.02em;
     font-weight: 700;
   }
@@ -56,14 +49,14 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #b7d5c8;
+  background: #cbd5e1;
   border-radius: 6px;
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background: #194237;
+  background: #1f4238;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #168057;
+  background: #0e7490;
 }

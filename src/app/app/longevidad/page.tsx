@@ -14,45 +14,51 @@ export default function LongevidadPage() {
       secondaryCtaHref="/pro/vademecum"
       heroIcon={<Hourglass className="w-6 h-6 text-emerald-300" />}
     >
-      <div className="space-y-3.5">
-        <div className="bg-brand-surface dark:bg-dark-surface p-5 rounded-2xl border border-brand-border dark:border-dark-border shadow-xs flex items-start gap-4 transition-colors">
-          <div className="w-10 h-10 rounded-xl bg-brand-sage dark:bg-dark-surface-tint text-brand-green dark:text-emerald-400 flex items-center justify-center shrink-0">
-            <Sun className="w-5 h-5" />
+      <div className="space-y-4">
+        <div className="bg-brand-surface dark:bg-dark-surface rounded-xl border border-brand-border dark:border-dark-border divide-y divide-brand-border dark:divide-dark-border shadow-sm">
+          <div className="p-5 flex items-start gap-4">
+            <div className="w-10 h-10 rounded-lg bg-brand-sage dark:bg-dark-surface-tint text-brand-green dark:text-emerald-400 flex items-center justify-center shrink-0">
+              <Sun className="w-5 h-5" />
+            </div>
+            <div>
+              <h2 className="text-sm font-bold text-brand-text-main dark:text-dark-text-main font-outfit">
+                Vías Antioxidantes & Telómeros (Astrágalo & Tremella)
+              </h2>
+              <p className="text-sm text-brand-text-muted dark:text-dark-text-muted mt-1 leading-relaxed">
+                Nutrientes que respaldan la síntesis de colágeno, hidratación tisular y protección frente al daño oxidativo ambiental.
+              </p>
+            </div>
           </div>
-          <div>
-            <h2 className="text-xs font-bold text-brand-text-main dark:text-dark-text-main font-outfit">Vías Antioxidantes & Telómeros (Astrágalo & Tremella)</h2>
-            <p className="text-xs text-brand-text-muted dark:text-dark-text-muted mt-1 leading-relaxed">
-              Nutrientes que respaldan la síntesis de colágeno, hidratación tisular y protección frente al daño oxidativo ambiental.
-            </p>
+
+          <div className="p-5 flex items-start gap-4">
+            <div className="w-10 h-10 rounded-lg bg-brand-sage dark:bg-dark-surface-tint text-brand-teal dark:text-teal-400 flex items-center justify-center shrink-0">
+              <ShieldPlus className="w-5 h-5" />
+            </div>
+            <div>
+              <h2 className="text-sm font-bold text-brand-text-main dark:text-dark-text-main font-outfit">
+                Polifenoles Concentrados (Resveratrol & Curcumina)
+              </h2>
+              <p className="text-sm text-brand-text-muted dark:text-dark-text-muted mt-1 leading-relaxed">
+                Complejos fitoquímicos de alta pureza para la modulación de las sirtuinas y enzimas protectoras endógenas.
+              </p>
+            </div>
           </div>
         </div>
 
-        <div className="bg-brand-surface dark:bg-dark-surface p-5 rounded-2xl border border-brand-border dark:border-dark-border shadow-xs flex items-start gap-4 transition-colors">
-          <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-dark-surface-tint text-brand-emerald dark:text-emerald-400 flex items-center justify-center shrink-0">
-            <ShieldPlus className="w-5 h-5" />
-          </div>
-          <div>
-            <h2 className="text-xs font-bold text-brand-text-main dark:text-dark-text-main font-outfit">Polifenoles Concentrados (Resveratrol & Curcumina)</h2>
-            <p className="text-xs text-brand-text-muted dark:text-dark-text-muted mt-1 leading-relaxed">
-              Complejos fitoquímicos de alta pureza para la modulación de las sirtuinas y enzimas protectoras endógenas.
-            </p>
-          </div>
-        </div>
-
-        <div className="bg-brand-sage/80 dark:bg-dark-surface p-4 rounded-2xl border border-brand-border dark:border-dark-border space-y-2.5 transition-colors">
-          <h2 className="text-xs font-bold text-brand-emerald dark:text-emerald-300 font-outfit">
+        <div className="bg-brand-sage/80 dark:bg-dark-surface p-5 rounded-xl border border-brand-border dark:border-dark-border space-y-2">
+          <h2 className="text-sm font-bold text-brand-forest dark:text-emerald-300 font-outfit">
             Línea Longevidad en Vademécum
           </h2>
-          <p className="text-xs text-brand-text-muted dark:text-dark-text-muted leading-relaxed">
+          <p className="text-sm text-brand-text-muted dark:text-dark-text-muted leading-relaxed">
             Descubra las especificaciones técnicas de <strong>Longevity Glow</strong> y <strong>Triple Polifenol</strong> preparadas para prescripción informada.
           </p>
           <div className="pt-1">
             <Link
               href="/pro/vademecum"
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-green dark:text-emerald-400 hover:underline font-outfit"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-teal dark:text-teal-400 hover:underline font-outfit"
             >
               <span>Ver fichas de longevidad</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
